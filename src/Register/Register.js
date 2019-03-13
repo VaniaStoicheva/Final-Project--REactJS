@@ -1,0 +1,50 @@
+import React, { Component } from 'react';
+import './Register.css';
+import handleSubmit from '../App';
+
+class Register extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      username:null,
+      password:null,
+      email:null
+    }
+    this.handleChange=props.handleChange.bind(this)
+
+  }
+  
+  render() {
+    return (
+      <div className="Register">
+        <h1>Register</h1>
+        <form onSubmit={(e)=>this.props.handleSubmit(e ,this.state ,true)}>
+          <label htmlFor="username">Username</label>
+          <input 
+          type="text" 
+          name="username" 
+          onChange={this.handleChange} 
+         placeholder="Ivan Ivanov" 
+          />
+          <label htmlFor="email">Email</label>
+          <input 
+          type="text" 
+          name="email" 
+          onChange={this.handleChange} 
+          placeholder="ivan@gmail.com" 
+          />
+          <label htmlFor="password">Password</label>
+          <input 
+          type="password" 
+          name="password"
+          onChange={this.handleChange}  
+          placeholder="******" 
+          />
+          <input type="submit" value="REGISTER" />
+        </form>
+      </div>
+    );
+  }
+}
+
+export default Register;
