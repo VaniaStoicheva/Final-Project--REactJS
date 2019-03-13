@@ -24,7 +24,7 @@ class App extends Component {
   
   handleSubmit(e ,data , isSignup ){
     e.preventDefault();
-    console.log(data);
+   // console.log(data);
     fetch('http://localhost:9999/auth/sign' + (isSignup ? 'up' : 'in') ,
         {
             method:'post',
